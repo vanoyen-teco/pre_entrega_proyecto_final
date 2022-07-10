@@ -1,0 +1,24 @@
+{
+  "carts": [
+    {
+      "id": 2,
+      "timestamp": 1656967506894,
+      "productos": [
+        {
+          "id": 2,
+          "timestamp": 1656961432964,
+          "nombre": "Ejemplo de titulo",
+          "descripcion": "Ejemplo de descripcion",
+          "codigo": "AA55F",
+          "foto": "url",
+          "precio": 1050,
+          "stock": 60
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "timestamp": 1656968760543
+    }
+  ]
+}

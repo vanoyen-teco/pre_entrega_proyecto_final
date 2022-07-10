@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "nombre": "Ejemplo de titulo",
+      "descripcion": "Ejemplo de descripcion",
+      "codigo": "AA55F",
+      "foto": "url",
+      "precio": 1050,
+      "stock": 60,
+      "id": 1,
+      "timestamp": 1656961432964
+    }
+  ]
+}

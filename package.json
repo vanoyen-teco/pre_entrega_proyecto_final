@@ -1,0 +1,29 @@
+{
+  "name": "pre_entrega_proyecto_final",
+  "version": "1.0.0",
+  "description": "Tema: Pre entrega proyecto final\r Link:",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js --ignore 'src/database/*.json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanoyen-teco/pre_entrega_proyecto_final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanoyen-teco/pre_entrega_proyecto_final/issues"
+  },
+  "homepage": "https://github.com/vanoyen-teco/pre_entrega_proyecto_final#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
