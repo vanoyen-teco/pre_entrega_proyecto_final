@@ -1,16 +1,12 @@
 const Cart = require("../database/Cart");
 
 const createNewCart = () => {
-    const lastId = Cart.getLastId() ;
     const CartToInsert = {
-        id: lastId,
         timestamp: new Date().getTime(),
     };
     try {
-        if(lastId){
-            const createdCart = Cart.createNewCart(CartToInsert);
-            return createdCart;
-        }
+        const createdCart = Cart.createNewCart(CartToInsert);
+        return createdCart;
     } catch (error) {
         return false;
     }

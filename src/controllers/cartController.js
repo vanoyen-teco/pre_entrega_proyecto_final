@@ -45,10 +45,11 @@ const insertNewProduct = (req, res) => {
         stock: body.stock,
     };
     const insertedProduct = cartService.insertNewProduct(id, newProduct);
-    (insertedProduct)
-    ?res.status(201).send({ status: "OK", data: insertedProduct })
-    :res.status(204).send({ status: "No Content" });
-    
+    insertedProduct.then((response)=>{
+        (response)
+        ?res.status(201).send({ status: "OK", data: insertedProduct })
+        :res.status(204).send({ status: "No Content" });
+    });
 };
 
 const deleteOneCart = (req, res) => {
@@ -65,9 +66,11 @@ const deleteOneCart = (req, res) => {
         return;
     }
     const deletedCart = cartService.deleteOneCart(req.params.id);
-    return (deletedCart)
-    ?res.status(200).send({ status: "OK", data: deletedCart })
-    :res.status(404).send({ status: "NOT FOUND", data: {error: "Lo sentimos, no encontramos el carrito."} })
+    deletedCart.then((del)=>{
+        (del)
+        ?res.status(200).send({ status: "OK", data: deletedCart })
+        :res.status(404).send({ status: "NOT FOUND", data: {error: "Lo sentimos, no encontramos el carrito."} })
+    })    
 };
 
 const getAllFromOneCart = (req, res) => {

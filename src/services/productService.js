@@ -11,17 +11,9 @@ const getProductById = (productId) => {
 };
 
 const createNewProduct = (newProduct) => {
-    const lastId = Product.getLastId() ;
-    const productToInsert = {
-        ...newProduct,
-        id: lastId,
-        timestamp: new Date().getTime(),
-    };
     try {
-        if(lastId){
-            const createdProduct = Product.createNewProduct(productToInsert);
-            return createdProduct;
-        }
+        const createdProduct = Product.createNewProduct(newProduct);
+        return createdProduct;
     } catch (error) {
         return false;
     }

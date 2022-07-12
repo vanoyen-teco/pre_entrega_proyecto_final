@@ -2,14 +2,19 @@ const productService = require("../services/productService");
 
 const getAllProducts = (req, res) => {
     const allProducts = productService.getAllProducts();
-    res.send({ status: "OK", data: allProducts });
+    allProducts.then((prods)=>{
+        res.send({ status: "OK", data: prods });
+    })
+    
 };
 
 const getProductById = (req, res) => {
     const productByID = productService.getProductById(req.params.id);
-    (productByID)
-    ?res.status(201).send({ status: "OK", data: productByID })
-    :res.status(400).send({ status: "FAILED", data: {error: "El producto no existe"} });
+    productByID.then( (ref) => {
+        (ref)
+        ?res.status(200).send({ status: "OK", data: ref })
+        :res.status(400).send({ status: "FAILED", data: {error: "El producto no existe"} });
+    }) 
 };
 
 const getProducts = (req, res) => {
@@ -101,9 +106,11 @@ const deleteOneProduct = (req, res) => {
         return;
     }
     const deletedProduct = productService.deleteOneProduct(req.params.id);
-    return (deletedProduct)
-    ?res.status(200).send({ status: "OK", data: deletedProduct })
-    :res.status(404).send({ status: "NOT FOUND", data: {error: "Lo sentimos, no encontramos el producto."} })
+    deletedProduct.then((del)=>{
+        (del)
+        ?res.status(200).send({ status: "OK", data: del })
+        :res.status(404).send({ status: "NOT FOUND", data: {error: "Lo sentimos, no encontramos el producto."} })
+    })
 };
 
 module.exports = {
